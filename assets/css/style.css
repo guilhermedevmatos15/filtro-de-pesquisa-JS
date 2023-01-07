@@ -54,7 +54,7 @@ p.fruit > strong {
 
 
 /* Manipulation in Javascript */
-p.fruit {
+p.hidden {
    display: none;
 }
 
