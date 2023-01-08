@@ -6,12 +6,21 @@ function hideElement() {
       fruit.classList.add('hidden');
    }
 }
+function showElement() {
+   for (fruit of groupOfFruits) {
+      fruit.classList.remove('hidden');
+   }
+}
 
 input.addEventListener('keyup', ()=>{
    hideElement();
-   for (let fruit of groupOfFruits) {
-      if (fruit.innerHTML.toLowerCase().includes(input.value.toLowerCase())) {
-         fruit.classList.remove('hidden');
+   if (input.value === '') {
+      showElement();
+   } else {
+      for (let fruit of groupOfFruits) {
+         if (fruit.innerHTML.toLowerCase().includes(input.value.toLowerCase())) {
+            fruit.classList.remove('hidden');
+         }
       }
-   }  
+   }
 });
