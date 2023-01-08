@@ -1,13 +1,16 @@
 const input = document.querySelector('input');
 const groupOfFruits = [...document.querySelector('article.fruits').children];
 
-input.addEventListener('keyup', ()=>{
+function hideElement() {
    for (fruit of groupOfFruits) {
       fruit.classList.add('hidden');
    }
-   
+}
+
+input.addEventListener('keyup', ()=>{
+   hideElement();
    for (let fruit of groupOfFruits) {
-      if (input.value.toLowerCase().includes(fruit.innerHTML.toLowerCase())) {
+      if (fruit.innerHTML.toLowerCase().includes(input.value.toLowerCase())) {
          fruit.classList.remove('hidden');
       }
    }  
